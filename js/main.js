@@ -49,14 +49,17 @@ contactForm.addEventListener('submit', (e) => {
         timestamp: new Date().toISOString()
     };
     
-    // Show success message
-    showNotification('お問い合わせを受け付けました。ありがとうございます！', 'success');
+    // Show success message (コメントアウト)
+    // showNotification('お問い合わせを受け付けました。ありがとうございます！', 'success');
     
-    // Reset form
-    contactForm.reset();
+    // Reset form (コメントアウト)
+    // contactForm.reset();
     
     // Log form data (in production, this would be sent to a server)
     console.log('Form submitted:', formData);
+
+    // thanks.html へリダイレクト
+    window.location.href = 'thanks.html';
 });
 
 // Notification function
@@ -140,7 +143,7 @@ const observerOptions = {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersected) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
         }
